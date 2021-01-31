@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-stretch: normal;
+    font-size: .9rem;
+    outline: none;
+    font-weight: normal;
+    a {
+        text-decoration: none;
+    }
+    button,
+    select {
+        cursor: pointer;
+    }
+    
+}
+img{
+    width: 100%;
+}
+
+
+$primary: #f7931e;
+$secondary: #1a1a1a;
+$grd2: repeat(2, 1fr);
+$grd3: repeat(3, 1fr);
+$grd4: repeat(4, 1fr);
+
+.container_ap{
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+header{
+    padding: 30px 0;
+    margin-bottom: -130px;
+    width: 100%;
+    .cntn_header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .box_logo{
+            width: 170px;
+            img{
+
+            }
+        }
+        .box_menu{
+            .cntrl_btn{
+                position: fixed;
+                bottom: 30px;
+                right: 10px;
+                z-index: 3;
+                display: none;
+                .btn_resp{
+                    cursor: pointer;
+                    border: 2px solid $secondary;
+                    background-color: rgba(255,255,255,.3);
+                    backdrop-filter: blur(4px);
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .bars, .times{
+                        display: none;
+                        svg{
+
+                        }
+                    }
+                    .active{
+                        display: block;
+                    }
+                   
+                }
+            }
+            .active_main{
+                display: block;
+            }
+            .menu{
+                transition: .4s;
+                a{
+                    color: $secondary;
+                    padding: .5em 1em;
+                    position: relative;
+                }
+                a::after{
+                    content: "";
+                    width: 0%;
+                    height: 2px;
+                    background-color: $secondary;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    transition: .4s;
+                }
+                a:hover::after{
+                    width: 100%;
+                }
+            }
+            .mnu_rss_act{
+                right: 0!important;
+            }
+        }
+    }
+}
+.first-section{
+    background-image: url("../img/bg_bg.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    padding-top: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .cntn_first_sec{
+        display: grid;
+        grid-template-columns: $grd2;
+        grid-gap: 30px;
+        .box_texto_inic{
+            h2{
+                font-size: 3.5em;
+                font-weight: bold;
+                color: $secondary;
+            }
+        }
+        .box_img_inic{
+            img{
+
+            }
+        }
+    }
+}
+
+.second-section{
+    padding: 50px 0;
+    .cntn_second_sec{
+        h3{
+            text-align: center;
+            color: $primary;
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: .5em;
+        }
+        p{
+            text-align: justify;
+            line-height: 25px;
+        }
+    }
+}
+
+footer{
+    background-color: $secondary;
+    padding: 20px 0;
+    .cntn_footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .line_btmm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            p{
+                color: #4d4d4d;
+                margin-bottom: .5em;
+            }
+        }
+    }
+}
+
+
+
+
+
+@import "_resp";
